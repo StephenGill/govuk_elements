@@ -14,6 +14,9 @@
         <span class="heading-secondary">Form elements</span>
         Example: Radio buttons <br> and checkboxes
       </h1>
+      <h2 class="heading-medium">
+        These examples are one-question-per-page examples and use a heading for the question, with a visually hidden legend inside a fieldset.
+      </h2>
 
       <p class="text">
         This test page demonstrates selection-buttons.js from the govuk frontend toolkit, which
@@ -24,137 +27,43 @@
         It also demonstrates setting ARIA attributes when showing and hiding additional content.
       </p>
 
-      <form action="/" method="post" class="form">
+      <div class="form-section">
+        <!-- "Chunky" Radio buttons, stacked -->
+        {{> form_radio_buttons }}
+      </div>
 
-        <h1 class="heading-large">
-          What is your nationality?
-        </h1>
+      <div class="form-section">
+        <!-- Yes or No question (without revealed content ) -->
+        {{> form_radio_buttons_inline }}
+      </div>
 
-        <p>If you have dual nationality, select all options that are relevant to you.</p>
+      <div class="form-section">
+        <!-- Radio buttons (select one option to reveal content) -->
+        {{> form_radio_buttons_large }}
+      </div>
 
-        <div class="form-group">
-          <fieldset>
+      <div class="form-section">
+        <!-- Yes or No question (select one option to reveal content) -->
+        {{> form_radio_inline_yes_no }}
+      </div>
 
-            <legend class="visuallyhidden">What is your nationality?</legend>
+      <div class="form-section">
+        <!-- Radio buttons (select one option to reveal content) -->
+        {{> form_inset_radios }}
+      </div>
 
-            <label for="nationality_british" class="block-label">
-              <input type="checkbox" name="nationality_british" value="British" id="nationality_british">
-              British
-            </label>
+      <div class="form-section">
+        <!-- "Chunky" Checkboxes, stacked -->
+        {{> form_checkboxes }}
+      </div>
 
-            <label for="nationality_irish" class="block-label">
-              <input type="checkbox" name="nationality_irish" value="Irish" id="nationality_irish">
-              Irish
-            </label>
+      <div class="form-section">
+        <!-- Checkboxes (select more than option to reveal content) -->
+        {{> form_inset_checkboxes }}
+      </div>
 
-            <label for="nationality_other" class="block-label" data-target="example_nationality_other">
-              <input type="checkbox" name="nationality_other" value="Wales" id="nationality_other">
-              Citizen of another country
-            </label>
-
-            <div class="panel panel-border-narrow js-hidden" id="example_nationality_other">
-              <label for="nationality_other_countries" class="form-label">
-                Country name
-              </label>
-              <input type="text" id="nationality_other_countries">
-            </div>
-
-          </fieldset>
-        </div>
-
-        <h1 class="heading-large">
-          Where should we send your new<br> passport?
-        </h1>
-
-        <div class="form-group">
-          <fieldset>
-
-            <legend class="visuallyhidden">
-              Where should we send your new passport?
-            </legend>
-
-            <label for="radio-home-address" class="block-label">
-              <input id="radio-home-address" type="radio" name="radio-indent-group" value="Yes">
-              Home address
-            </label>
-
-            <label for="radio-other-address" class="block-label" data-target="example-other-address">
-              <input id="radio-other-address" type="radio" name="radio-indent-group" value="No">
-              Other address
-            </label>
-
-            <div class="panel panel-border-narrow js-hidden" id="example-other-address">
-
-              <h2 class="heading-medium">
-                Your other address
-              </h2>
-
-              <fieldset>
-
-                <legend class="visuallyhidden">
-                  Your other address
-                </legend>
-
-                <div class="form-group form-group-compound">
-                  <label class="form-label" for="address-line-1">Street</label>
-                  <input type="text" class="form-control" id="address-line-1">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label visuallyhidden" for="address-line-2">Street</label>
-                  <input type="text" class="form-control" id="address-line-2">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="address-town">Town or City</label>
-                  <input type="text" class="form-control form-control-1-4" id="address-town">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label" for="address-postcode">Postcode</label>
-                  <input type="text" class="form-control form-control-1-8" id="address-postcode">
-                </div>
-
-              </fieldset>
-
-            </div>
-          </fieldset>
-        </div>
-
-        <h1 class="heading-large">
-          Which part of the Housing Act was your licence isued under?
-        </h1>
-
-        <p>
-          Select one of the options below.
-        </p>
-
-        <div class="form-group">
-          <fieldset>
-
-            <legend class="visuallyhidden">
-              Which part of the Housing Act was your licence isued under?
-            </legend>
-
-            <label for="radio-part-2" class="block-label">
-              <input id="radio-part-2" type="radio" name="housing-act" value="Part 2">
-              <span class="heading-small">Part 2 of the Housing Act 2004</span><br>
-              For properties that are 3 or more stories high and occupied by 5 or more people
-            </label>
-
-            <label for="radio-part-3" class="block-label">
-              <input id="radio-part-3" type="radio" name="housing-act" value="Part 3">
-              <span class="heading-small">Part 3 of the Housing Act 2004</span><br>
-              For properties that are within a geographical area defined by a local council
-            </label>
-
-          </fieldset>
-        </div>
-
-      </form>
     </div>
   </div>
-
 </main><!-- /#content-->
 {{/content}}
 
